@@ -1,0 +1,75 @@
+
+:root{
+  --agri-green:#0a6f3c;
+  --agri-sky:#5cc4ff;
+  --agri-lemon:#ffd166;
+  --agri-rose:#ff7a94;
+  --agri-plum:#7c3aed;
+  --agri-bg:#f6fffb;
+  --card-bg:#ffffff;
+  --card-br:14px;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+body{background:var(--agri-bg);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0b1b11}
+a{text-decoration:none;color:#0369a1}
+a:hover{text-decoration:underline}
+button{border:none;border-radius:12px;padding:8px 12px;background:linear-gradient(90deg,var(--agri-lemon),var(--agri-sky));cursor:pointer;font-weight:700}
+button:disabled{opacity:.6;cursor:not-allowed}
+.agri-card{background:var(--card-bg);border:1px solid rgba(0,0,0,.06);border-radius:var(--card-br);box-shadow:var(--shadow);padding:12px}
+.agri-pill{background:linear-gradient(90deg,var(--agri-lemon),var(--agri-sky));padding:4px 10px;border-radius:999px;font-weight:700}
+.agri-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,#e9d5ff,#bae6fd);border:1px solid rgba(0,0,0,.06)}
+.agri-hover:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(0,0,0,.12);transition:all .2s ease}
+.agri-badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#e0f2fe;font-size:12px}
+.agri-gradient-title{background:linear-gradient(90deg,var(--agri-green),var(--agri-sky));-webkit-background-clip:text;color:transparent}
+.skeleton{background:linear-gradient(90deg,#f1f5f9,#e2e8f0,#f1f5f9);background-size:200% 100%;animation:shimmer 1.3s infinite}
+@keyframes shimmer{0%{background-position:0% 0}100%{background-position:-200% 0}}
+
+
+/* === Global Responsive Enhancements (auto-applied) === */
+html { font-size: clamp(14px, 1.2vw + 10px, 18px); }
+* { box-sizing: border-box; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+
+/* Layout helpers */
+.container { width: min(100% - 2rem, 1200px); margin-inline: auto; }
+.max-w-readable { max-width: 65ch; }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.stack { display: flex; flex-direction: column; gap: 1rem; }
+.wrap { flex-wrap: wrap; }
+
+/* Hide/show helpers */
+.hide-on-mobile { display: none; }
+.show-on-mobile { display: initial; }
+
+/* Buttons/interactive hit area boost for touch */
+button, a, input, select, textarea { touch-action: manipulation; }
+
+/* --- Breakpoints --- */
+/* Small devices (phones) */
+@media (max-width: 600px) {
+  body { padding: 0 0.75rem; }
+  nav, header, .stack-sm { display: flex; flex-direction: column; gap: 0.75rem; }
+  .grid-auto { grid-template-columns: 1fr; }
+  .card { padding: 1rem !important; }
+  .hide-on-mobile { display: none !important; }
+  .show-on-mobile { display: initial !important; }
+}
+
+/* Medium/Large (desktops, laptops) */
+@media (min-width: 601px) and (max-width: 1599px) {
+  .container { width: min(100% - 4rem, 1280px); }
+}
+
+/* Extra-large / TV screens */
+@media (min-width: 1600px) {
+  html { font-size: clamp(18px, 0.7vw + 12px, 22px); }
+  .container { width: min(100% - 6rem, 1600px); }
+  .max-w-readable { max-width: 80ch; }
+  .grid-auto { gap: 1.25rem; }
+}
+
+/* Safe-area support for notches (iOS/Android) */
+body { padding-left: max(0px, env(safe-area-inset-left)); padding-right: max(0px, env(safe-area-inset-right)); }
+footer { padding-bottom: max(16px, env(safe-area-inset-bottom)); }
