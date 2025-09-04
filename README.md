@@ -1,9 +1,7 @@
-# AgriSkill Navigator — Routed Frontend
+# Real-time Image Analyzer — MRV — Routed Frontend
 
 This is a routed React (Vite) frontend with three working tools:
-- **AgriSkill Navigator** (`/agriskill`): Career graph, mentor list, skill analyzer with radar & recommendations.
 - **Real-time Image-based Indices Analyzer** (`/indices`): Compute **VARI** and **GLI** indices from standard RGB images and visualize them on-canvas.
-- **GenAI for Precision Farming** (`/genai`): Simple local chat advisor (stub), ready to be wired to FastAPI/Vertex AI.
 
 ## Run
 ```bash
